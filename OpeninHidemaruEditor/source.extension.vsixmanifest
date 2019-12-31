@@ -5,8 +5,6 @@
         <DisplayName>Open in Hidemaru Editor</DisplayName>
         <Description xml:space="preserve">Adds a menu command that lets you open any solution, project, folder and file in Hidemaru editor.</Description>
         <MoreInfo>https://github.com/ohtorii/OpeninHidemaruEditor</MoreInfo>
-        <License>LICENSE</License>
-        <GettingStartedGuide>README.md</GettingStartedGuide>
         <Tags>hidemaru</Tags>
     </Metadata>
     <Installation>
