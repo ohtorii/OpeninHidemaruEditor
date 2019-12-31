@@ -9,7 +9,7 @@ namespace OpeninHidemaruEditor
     {
         public const string Id = "OpeninHidemaruEditor.845bf486-eb77-4a7d-b5ab-9237c5429943";
         public const string Name = "Open in Hidemaru Editor";
-        public const string Description = @"Adds a menu command that lets you open any solution, project, folder and file in Hidemaru editorss";
+        public const string Description = @"Adds a menu command that lets you open any solution, project, folder and file in Hidemaru editor.";
         public const string Language = "en-US";
         public const string Version = "1.0.0";
         public const string Author = "Ohtorii";
