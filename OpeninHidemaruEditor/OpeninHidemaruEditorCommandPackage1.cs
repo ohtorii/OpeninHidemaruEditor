@@ -18,21 +18,16 @@ namespace OpeninHidemaruEditor
         public const string guidCommand1PackageCmdSetString = "610d7b6f-5697-40cd-b3c4-a1dca9011d91";
         public static Guid guidCommand1PackageCmdSet = new Guid(guidCommand1PackageCmdSetString);
 
-        public const string guidImagesString = "599355fd-49d0-4ca5-81cd-c5361f56d54f";
-        public static Guid guidImages = new Guid(guidImagesString);
+        public const string guidIconsString = "599355fd-49d0-4ca5-81cd-c5361f56d54f";
+        public static Guid guidIcons = new Guid(guidIconsString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
     /// </summary>
     internal sealed partial class PackageIds
     {
-        public const int MyMenuGroup = 0x1020;
         public const int Command1Id = 0x0100;
-        public const int bmpPic1 = 0x0001;
-        public const int bmpPic2 = 0x0002;
-        public const int bmpPicSearch = 0x0003;
-        public const int bmpPicX = 0x0004;
-        public const int bmpPicArrows = 0x0005;
-        public const int bmpPicStrikethrough = 0x0006;
+        public const int MyMenuGroup = 0x1020;
+        public const int HidemaruEditor = 0x0001;
     }
 }

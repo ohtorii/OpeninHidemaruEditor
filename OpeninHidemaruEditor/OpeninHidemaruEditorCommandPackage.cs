@@ -33,6 +33,7 @@ namespace OpeninHidemaruEditor
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
+    [InstalledProductRegistration("#110", "#112", "1.0.0", IconResourceID = 400)]
     [ProvideOptionPage(typeof(Settings), Vsix.Name, "General", 101, 111, true, new string[0], ProvidesLocalizedCategoryName = false)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(OpeninHidemaruEditorCommandPackage.PackageGuidString)]
