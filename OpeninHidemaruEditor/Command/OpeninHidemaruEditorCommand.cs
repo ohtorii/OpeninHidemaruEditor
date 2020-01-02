@@ -123,12 +123,12 @@ namespace OpeninHidemaruEditor
 
         private static void OpenHidemaruEditor(string executablePath, string selectedFilePath)
         {
-            Debug.WriteLine("executablePath={0} / selectedFilePath={1}", executablePath,selectedFilePath);
-            return;
+            ///j行番号,桁番号　または/j行番号 
+            Debug.WriteLine("executablePath={0} / selectedFilePath={1}", executablePath,selectedFilePath);            
 
             var startInfo = new ProcessStartInfo
             {
-                WorkingDirectory = selectedFilePath,
+                //WorkingDirectory = selectedFilePath,
                 FileName = $"\"{executablePath}\"",
                 Arguments = $"\"{selectedFilePath}\"",
                 //CreateNoWindow = false,
