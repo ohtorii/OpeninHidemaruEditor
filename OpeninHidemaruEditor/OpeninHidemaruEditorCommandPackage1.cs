@@ -26,7 +26,7 @@ namespace OpeninHidemaruEditor
     /// </summary>
     internal sealed partial class PackageIds
     {
-        public const int Command1Id = 0x0100;
+        public const int CommandId = 0x0100;
         public const int MyMenuGroup = 0x1020;
         public const int HidemaruEditor = 0x0001;
     }
