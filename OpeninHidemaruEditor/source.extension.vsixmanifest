@@ -7,6 +7,7 @@
         <MoreInfo>https://github.com/ohtorii/OpeninHidemaruEditor</MoreInfo>
         <License>Resources\LICENSE</License>
         <Icon>Resources\Icon.png</Icon>
+        <PreviewImage>Resources\preview.png</PreviewImage>
         <Tags>hidemaru,text,code</Tags>
     </Metadata>
     <Installation>
