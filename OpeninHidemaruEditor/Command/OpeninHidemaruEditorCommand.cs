@@ -39,7 +39,7 @@ namespace OpeninHidemaruEditor
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
 
             {
-                var menuCommandID = new CommandID(PackageGuids.guidCommand1PackageCmdSet, PackageIds.CommandId);
+                var menuCommandID = new CommandID(PackageGuids.guidCommandPackageCmdSet, PackageIds.CommandId);
                 var menuItem = new MenuCommand(this.Execute, menuCommandID);
                 commandService.AddCommand(menuItem);
             }

@@ -36,7 +36,7 @@
          group as the part of a menu contained between two lines. The parent of a group
          must be a menu. -->
     <Groups>
-      <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Group guid="guidCommandPackageCmdSet" id="MyMenuGroup" priority="0x0600">
         <!-- 
 				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
 				-->
@@ -56,8 +56,8 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidCommand1PackageCmdSet" id="CommandId" priority="0x0100" type="Button">
-        <Parent guid="guidCommand1PackageCmdSet" id="MyMenuGroup" />
+      <Button guid="guidCommandPackageCmdSet" id="CommandId" priority="0x0100" type="Button">
+        <Parent guid="guidCommandPackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidIcons" id="HidemaruEditor" />
         <Strings>
           <ButtonText>Open in Hidemaru editor</ButtonText>
@@ -85,13 +85,13 @@
   </Commands>
 
   <CommandPlacements>
-    <CommandPlacement guid="guidCommand1PackageCmdSet" id="CommandId" priority="0x0500">
+    <CommandPlacement guid="guidCommandPackageCmdSet" id="CommandId" priority="0x0500">
       <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_SOLUTION_EXPLORE"/>
     </CommandPlacement>
-    <CommandPlacement guid="guidCommand1PackageCmdSet" id="CommandId" priority="0x0500">
+    <CommandPlacement guid="guidCommandPackageCmdSet" id="CommandId" priority="0x0500">
       <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_EXPLORE"/>
     </CommandPlacement>
-    <CommandPlacement guid="guidCommand1PackageCmdSet" id="CommandId" priority="0x0500">
+    <CommandPlacement guid="guidCommandPackageCmdSet" id="CommandId" priority="0x0500">
       <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_ITEM_OPEN"/>
     </CommandPlacement>
     <CommandPlacement guid="guidCommandAPackageCmdSet" id="MyMenuAGroup" priority="0x0600">
@@ -105,7 +105,7 @@
     <GuidSymbol name="guidCommand1Package" value="{24134a27-a710-4c73-8544-88cdc6fb9056}" />
 
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidCommand1PackageCmdSet" value="{610d7b6f-5697-40cd-b3c4-a1dca9011d91}">
+    <GuidSymbol name="guidCommandPackageCmdSet" value="{610d7b6f-5697-40cd-b3c4-a1dca9011d91}">
       <IDSymbol name="CommandId"    value="0x0100" />
 			<IDSymbol name="MyMenuGroup"  value="0x1020" />
     </GuidSymbol>
