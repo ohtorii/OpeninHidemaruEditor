@@ -18,6 +18,9 @@ namespace OpeninHidemaruEditor
         public const string guidCommand1PackageCmdSetString = "610d7b6f-5697-40cd-b3c4-a1dca9011d91";
         public static Guid guidCommand1PackageCmdSet = new Guid(guidCommand1PackageCmdSetString);
 
+        public const string guidCommandAPackageCmdSetString = "1470e294-e4ec-4c6c-b67f-d4fdd071f208";
+        public static Guid guidCommandAPackageCmdSet = new Guid(guidCommandAPackageCmdSetString);
+
         public const string guidIconsString = "599355fd-49d0-4ca5-81cd-c5361f56d54f";
         public static Guid guidIcons = new Guid(guidIconsString);
     }
@@ -28,6 +31,8 @@ namespace OpeninHidemaruEditor
     {
         public const int CommandId = 0x0100;
         public const int MyMenuGroup = 0x1020;
+        public const int CommandAId = 0x0101;
+        public const int MyMenuAGroup = 0x1021;
         public const int HidemaruEditor = 0x0001;
     }
 }

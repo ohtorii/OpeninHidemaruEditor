@@ -37,8 +37,12 @@
          must be a menu. -->
     <Groups>
       <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+        <!-- 
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+				-->
       </Group>
+			<Group guid="guidCommandAPackageCmdSet" id="MyMenuAGroup" priority="0x0600">
+			</Group>
     </Groups>
 
     <!--Buttons section. -->
@@ -59,6 +63,14 @@
           <ButtonText>Open in Hidemaru editor</ButtonText>
         </Strings>
       </Button>
+
+			<Button guid="guidCommandAPackageCmdSet" id="CommandAId" priority="0x0100" type="Button">
+				<Parent guid="guidCommandAPackageCmdSet" id="MyMenuAGroup" />
+				<Icon guid="guidIcons" id="HidemaruEditor" />
+				<Strings>
+					<ButtonText>Open in Hidemaru editor (A)</ButtonText>
+				</Strings>
+			</Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -82,7 +94,7 @@
     <CommandPlacement guid="guidCommand1PackageCmdSet" id="CommandId" priority="0x0500">
       <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_ITEM_OPEN"/>
     </CommandPlacement>
-    <CommandPlacement guid="guidCommand1PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+    <CommandPlacement guid="guidCommandAPackageCmdSet" id="MyMenuAGroup" priority="0x0600">
       <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
     </CommandPlacement>
   </CommandPlacements>
@@ -94,10 +106,14 @@
 
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidCommand1PackageCmdSet" value="{610d7b6f-5697-40cd-b3c4-a1dca9011d91}">
-      <IDSymbol name="CommandId" value="0x0100" />
-      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="CommandId"    value="0x0100" />
+			<IDSymbol name="MyMenuGroup"  value="0x1020" />
     </GuidSymbol>
 
+		<GuidSymbol name="guidCommandAPackageCmdSet" value="{1470e294-e4ec-4c6c-b67f-d4fdd071f208}">
+			<IDSymbol name="CommandAId"   value="0x0101" />
+			<IDSymbol name="MyMenuAGroup" value="0x1021" />
+		</GuidSymbol>	
     
     <GuidSymbol name="guidIcons" value="{599355fd-49d0-4ca5-81cd-c5361f56d54f}" >
       <IDSymbol name="HidemaruEditor" value="1" />

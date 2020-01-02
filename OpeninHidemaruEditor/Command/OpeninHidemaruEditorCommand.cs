@@ -38,9 +38,16 @@ namespace OpeninHidemaruEditor
             this._package = package ?? throw new ArgumentNullException(nameof(package));
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
 
-            var menuCommandID = new CommandID(PackageGuids.guidCommand1PackageCmdSet, PackageIds.CommandId);
-            var menuItem = new MenuCommand(this.Execute, menuCommandID);
-            commandService.AddCommand(menuItem);
+            {
+                var menuCommandID = new CommandID(PackageGuids.guidCommand1PackageCmdSet, PackageIds.CommandId);
+                var menuItem = new MenuCommand(this.Execute, menuCommandID);
+                commandService.AddCommand(menuItem);
+            }
+            {
+                var menuCommandID = new CommandID(PackageGuids.guidCommandAPackageCmdSet, PackageIds.CommandAId);
+                var menuItem = new MenuCommand(this.Execute2, menuCommandID);
+                commandService.AddCommand(menuItem);
+            }
         }
 
         /// <summary>
@@ -76,6 +83,11 @@ namespace OpeninHidemaruEditor
             OleMenuCommandService commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
             Instance = new OpeninHidemaruEditorCommand(package, commandService);
             Instance._dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
+        }
+
+        private void Execute2(object sender, EventArgs e)
+        {
+            MessageBox.Show("Excute2");
         }
 
         /// <summary>
