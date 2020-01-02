@@ -26,13 +26,15 @@ namespace OpeninHidemaruEditor
 				return;
 			}
 
-			this.FolderPath = FindNotepadPlusPlus();
+			this.FolderPath = FindHidemaruEditor();
 		}
 
-		private static string FindNotepadPlusPlus()
+		private static string FindHidemaruEditor()
 		{
-			return "ダミー";
+			return @"C:\Program Files\Hidemaru\Hidemaru.exe";
 
+
+			return "ダミー";
 			var directoryInfo = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
 			if (directoryInfo.Parent == null)
 			{
