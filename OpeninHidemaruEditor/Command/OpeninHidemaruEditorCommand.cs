@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using OpeninHidemaruEditor.Helpers;
@@ -40,12 +41,12 @@ namespace OpeninHidemaruEditor
 
             {
                 var menuCommandID = new CommandID(PackageGuids.guidCommandPackageCmdSet, PackageIds.CommandId);
-                var menuItem = new MenuCommand(this.Execute, menuCommandID);
+                var menuItem = new MenuCommand(this.ExecuteExplorer, menuCommandID);
                 commandService.AddCommand(menuItem);
             }
             {
                 var menuCommandID = new CommandID(PackageGuids.guidCommandAPackageCmdSet, PackageIds.CommandAId);
-                var menuItem = new MenuCommand(this.Execute2, menuCommandID);
+                var menuItem = new MenuCommand(this.ExcuteActiveDocument, menuCommandID);
                 commandService.AddCommand(menuItem);
             }
         }
@@ -83,11 +84,22 @@ namespace OpeninHidemaruEditor
             OleMenuCommandService commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
             Instance = new OpeninHidemaruEditorCommand(package, commandService);
             Instance._dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
+            Assumes.Present(Instance._dte);
         }
 
-        private void Execute2(object sender, EventArgs e)
-        {
-            MessageBox.Show("Excute2");
+        private void ExcuteActiveDocument(object sender, EventArgs e)
+        {            
+            try
+            {
+                ThreadHelper.ThrowIfNotOnUIThread();
+                var line = _dte.ActiveDocument.Selection as EnvDTE.TextSelection;                
+                var selectedFilePath = _dte.ActiveDocument.FullName;
+                OpenHidemaruEditor(selectedFilePath, line.CurrentLine, line.CurrentColumn);
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex);
+            }
         }
 
         /// <summary>
@@ -97,22 +109,13 @@ namespace OpeninHidemaruEditor
         /// </summary>
         /// <param name="sender">Event sender.</param>
         /// <param name="e">Event args.</param>
-        private  void Execute(object sender, EventArgs e)
+        private  void ExecuteExplorer(object sender, EventArgs e)
         {
-            var service = _dte;
             try
             {
                 ThreadHelper.ThrowIfNotOnUIThread();
-                var selectedFilePath = ProjectHelpers.GetSelectedPath(service);
-                var executablePath = _settings.FolderPath;
-                if (!string.IsNullOrEmpty(selectedFilePath) && !string.IsNullOrEmpty(executablePath))
-                {
-                    OpenHidemaruEditor(executablePath, selectedFilePath);
-                }
-                else
-                {
-                    MessageBox.Show("Couldn't resolve the folder");
-                }
+                var selectedFilePath = ProjectHelpers.GetSelectedPath(_dte);
+                OpenHidemaruEditor(selectedFilePath);
             }
             catch (Exception ex)
             {
@@ -121,23 +124,40 @@ namespace OpeninHidemaruEditor
         }
 
 
-        private static void OpenHidemaruEditor(string executablePath, string selectedFilePath)
+        private void OpenHidemaruEditor(string selectedFilePath, int lineNo=0, int columnNo=0)
         {
-            ///j行番号,桁番号　または/j行番号 
-            Debug.WriteLine("executablePath={0} / selectedFilePath={1}", executablePath,selectedFilePath);            
+            ThreadHelper.ThrowIfNotOnUIThread();
 
+            //
+            //Check.
+            //
+            var executablePath = _settings.FolderPath;
+            if (string.IsNullOrEmpty(executablePath))
+            {
+                Logger.Log("Not found excutable path.");
+                return;
+            }
+            if (string.IsNullOrEmpty(selectedFilePath))
+            {
+                Logger.Log("Not found filepath.");
+                return;
+            }
+
+            //
+            //Spawn process.
+            //
+            string arguments = "";
+            if (lineNo != 0)
+            {
+                arguments += string.Format("/j{0},{1} ",lineNo,columnNo);
+            }
+            arguments += $"\"{selectedFilePath}\"";
             var startInfo = new ProcessStartInfo
             {
-                //WorkingDirectory = selectedFilePath,
                 FileName = $"\"{executablePath}\"",
-                Arguments = $"\"{selectedFilePath}\"",
-                //CreateNoWindow = false,
-                //WindowStyle = ProcessWindowStyle.Normal;
+                Arguments = arguments,
             };
-            using (System.Diagnostics.Process.Start(startInfo))
-            {
-                //TODO : Should this be empty?
-            }
+            System.Diagnostics.Process.Start(startInfo);
         }
     }
 }

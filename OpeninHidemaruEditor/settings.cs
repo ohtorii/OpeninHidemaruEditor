@@ -31,28 +31,32 @@ namespace OpeninHidemaruEditor
 
 		private static string FindHidemaruEditor()
 		{
-			return @"C:\Program Files\Hidemaru\Hidemaru.exe";
+//			return @"C:\Program Files\Hidemaru\Hidemaru.exe";
 
-
-			return "ダミー";
-			var directoryInfo = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
-			if (directoryInfo.Parent == null)
+			string[] rootPaths;
+			if (Environment.Is64BitOperatingSystem)
 			{
-				return null;
+				//秀丸エディタ64bit版を優先して探す。
+				rootPaths = new string[] {
+					@"C:\Program Files",
+					@"C:\Program Files (x86)"
+				};
+			}
+			else
+			{
+				rootPaths=new string[] { 
+					Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) 
+				};
 			}
 
-			foreach (var directory in directoryInfo.Parent.GetDirectories(directoryInfo.Name.Replace(" (x86)", string.Empty) + "*"))
+			foreach(var root in rootPaths)
 			{
-				foreach (var fileSystemInfo in directory.GetDirectories("Notepad++").Reverse())
+				var absPath=Path.Combine(root, @"Hidemaru\Hidemaru.exe");
+				if (File.Exists(absPath))
 				{
-					var path = Path.Combine(fileSystemInfo.FullName, "notepad++.exe");
-					if (File.Exists(path))
-					{
-						return path;
-					}
+					return absPath;
 				}
 			}
-
 			return null;
 		}
 	}

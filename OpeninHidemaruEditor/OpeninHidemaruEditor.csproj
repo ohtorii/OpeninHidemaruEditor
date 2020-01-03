@@ -81,6 +81,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Resources\preview.png" />
+    <None Include="..\README.md">
+      <Link>Resources\README.md</Link>
+    </None>
     <None Include="Key.snk" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
