@@ -13,6 +13,6 @@ namespace OpeninHidemaruEditor
         public const string Language = "en-US";
         public const string Version = "1.0.0";
         public const string Author = "Ohtorii";
-        public const string Tags = "hidemaru,text,code";
+        public const string Tags = "hidemaru,text,code,秀丸,秀丸エディタ";
     }
 }
