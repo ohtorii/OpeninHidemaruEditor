@@ -9,7 +9,7 @@
         <GettingStartedGuide>Resources\README.md</GettingStartedGuide>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\preview.png</PreviewImage>
-        <Tags>hidemaru,text,code</Tags>
+        <Tags>hidemaru,text,code,秀丸,秀丸エディタ</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0, 17.0)" />
