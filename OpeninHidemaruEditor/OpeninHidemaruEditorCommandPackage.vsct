@@ -68,7 +68,7 @@
 				<Parent guid="guidCommandAPackageCmdSet" id="MyMenuAGroup" />
 				<Icon guid="guidIcons" id="HidemaruEditor" />
 				<Strings>
-					<ButtonText>Open in Hidemaru editor (A)</ButtonText>
+					<ButtonText>Open in Hidemaru editor</ButtonText>
 				</Strings>
 			</Button>
     </Buttons>
