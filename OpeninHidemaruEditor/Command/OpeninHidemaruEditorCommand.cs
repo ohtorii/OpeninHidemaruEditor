@@ -35,18 +35,17 @@ namespace OpeninHidemaruEditor
         /// <param name="commandService">Command service to add command to, not null.</param>
         private OpeninHidemaruEditorCommand(AsyncPackage package, OleMenuCommandService commandService)
         {
-            _settings= (Settings)package.GetDialogPage(typeof(Settings));
+            this._settings = (Settings)package.GetDialogPage(typeof(Settings));
             this._package = package ?? throw new ArgumentNullException(nameof(package));
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
-
-            {
-                var menuCommandID = new CommandID(PackageGuids.guidCommandPackageCmdSet, PackageIds.CommandId);
-                var menuItem = new MenuCommand(this.ExecuteExplorer, menuCommandID);
-                commandService.AddCommand(menuItem);
-            }
             {
                 var menuCommandID = new CommandID(PackageGuids.guidCommandAPackageCmdSet, PackageIds.CommandAId);
                 var menuItem = new MenuCommand(this.ExcuteActiveDocument, menuCommandID);
+                commandService.AddCommand(menuItem);
+            }
+            {
+                var menuCommandID = new CommandID(PackageGuids.guidCommandPackageCmdSet, PackageIds.CommandId);
+                var menuItem = new MenuCommand(this.ExecuteExplorer, menuCommandID);
                 commandService.AddCommand(menuItem);
             }
         }
