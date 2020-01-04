@@ -34,7 +34,7 @@ namespace OpeninHidemaruEditor
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration("#110", "#112", "1.0.0", IconResourceID = 400)]
-    [ProvideOptionPage(typeof(Settings), Vsix.Name, "General", 101, 111, true, new string[0], ProvidesLocalizedCategoryName = false)]
+    //[ProvideOptionPage(typeof(Settings), Vsix.Name, "General", 101, 111, true, new string[0], ProvidesLocalizedCategoryName = false)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(OpeninHidemaruEditorCommandPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
