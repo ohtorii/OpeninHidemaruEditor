@@ -55,9 +55,9 @@
     <DeployExtension>True</DeployExtension>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Command\OpeninHidemaruEditorCommand.cs" />
-    <Compile Include="Helpers\Logger.cs" />
-    <Compile Include="Helpers\ProjectHelpers.cs" />
+    <Compile Include="OpeninHidemaruEditorCommand.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ProjectHelpers.cs" />
     <Compile Include="OpeninHidemaruEditorCommandPackage.cs" />
     <Compile Include="OpeninHidemaruEditorCommandPackage1.cs">
       <AutoGen>True</AutoGen>
