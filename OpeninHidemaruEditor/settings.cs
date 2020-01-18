@@ -17,6 +17,7 @@ namespace OpeninHidemaruEditor
 		[Description("The absolute path to the \"hidemaru.exe\" file.")]
 		public string FolderPath { get; set; }
 
+
 		public override void LoadSettingsFromStorage()
 		{
 			base.LoadSettingsFromStorage();
