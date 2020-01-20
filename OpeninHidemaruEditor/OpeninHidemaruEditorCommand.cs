@@ -134,7 +134,12 @@ namespace OpeninHidemaruEditor
             var executablePath = _settings.FolderPath;
             if (string.IsNullOrEmpty(executablePath))
             {
-                Logger.Log("Not found excutable path.");
+                MessageBox.Show("Not found hidemaru.exe");
+                return;
+            }
+            if (!System.IO.File.Exists(executablePath))
+            {
+                MessageBox.Show("Not found hidemaru.exe");
                 return;
             }
             if (string.IsNullOrEmpty(selectedFilePath))
