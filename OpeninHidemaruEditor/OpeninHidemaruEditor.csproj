@@ -83,7 +83,9 @@
     <Content Include="Resources\Icon.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Resources\preview.png" />
+    <Content Include="Resources\preview.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="..\README.md">
       <Link>Resources\README.md</Link>
     </None>
