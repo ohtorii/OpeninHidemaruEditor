@@ -1,0 +1,81 @@
+{
+	"name": "openinhidemarueditor",
+	"displayName": "OpenInHidemaruEditor",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.OpenInHidemaruEditor",
+		"onCommand:extension.OpenInHidemaruEditorEx"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.OpenInHidemaruEditor",
+				"title": "Open in Hidemaru editor"
+			},
+			{
+				"command": "extension.OpenInHidemaruEditorEx",
+				"title": "Open in Hidemaru editor ex"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+			  	{
+					"when": "resourceScheme == file",
+					"command": "extension.OpenInHidemaruEditor",
+					"group": "navigation"
+			  	}
+			],
+			"editor/title/context": [
+				{
+				  "when": "resourceScheme == file",
+				  "command": "extension.OpenInHidemaruEditor",
+				  "group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+				  "when": "resourceScheme == file",
+				  "command": "extension.OpenInHidemaruEditorEx",
+				  "group": "navigation"
+				}
+		  	]
+		},
+		"configuration": {
+			"title": "Open in Hidemaru editor",
+			"properties": {
+				"OpenInHidemaruEditor.Path": {
+					"type": "string",
+					"default": "",
+					"description": "\"Hidemaru.exe\" への絶対パス。\n（例）C:\\Tools\\Hidemaru.exe\n空白の場合は以下パスを利用します。\nC:\\Program Files\\Hidemaru\\Hidemaru.exe\nC:\\Program Files (x86)\\Hidemaru\\Hidemaru.exe",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"typescript": "^3.6.4",
+		"tslint": "^5.20.0",
+		"vscode-test": "^1.2.2"
+	}
+}
