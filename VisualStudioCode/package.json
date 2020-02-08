@@ -27,26 +27,26 @@
 		],
 		"menus": {
 			"explorer/context": [
-			  	{
+				{
 					"when": "resourceScheme == file",
 					"command": "extension.OpenInHidemaruEditor",
 					"group": "navigation"
-			  	}
+				}
 			],
 			"editor/title/context": [
 				{
-				  "when": "resourceScheme == file",
-				  "command": "extension.OpenInHidemaruEditor",
-				  "group": "navigation"
+					"when": "resourceScheme == file",
+					"command": "extension.OpenInHidemaruEditor",
+					"group": "navigation"
 				}
 			],
 			"editor/context": [
 				{
-				  "when": "resourceScheme == file",
-				  "command": "extension.OpenInHidemaruEditorEx",
-				  "group": "navigation"
+					"when": "resourceScheme == file",
+					"command": "extension.OpenInHidemaruEditorEx",
+					"group": "navigation"
 				}
-		  	]
+			]
 		},
 		"configuration": {
 			"title": "Open in Hidemaru editor",
