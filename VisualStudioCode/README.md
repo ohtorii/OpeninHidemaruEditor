@@ -1,6 +1,6 @@
-# hellomenu README
+# OpenInHidemaruEditor README
 
-This is the README for your extension "hellomenu". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "OpenInHidemaruEditor". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
