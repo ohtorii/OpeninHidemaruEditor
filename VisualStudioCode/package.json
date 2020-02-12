@@ -22,7 +22,7 @@
 			},
 			{
 				"command": "extension.OpenInHidemaruEditorEx",
-				"title": "Open in Hidemaru editor ex"
+				"title": "Open in Hidemaru editor"
 			}
 		],
 		"menus": {
