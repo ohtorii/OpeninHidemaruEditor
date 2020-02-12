@@ -1,4 +1,4 @@
-# Open in Hidemaru Editor
+﻿# Open in Hidemaru Editor
 
 ![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -39,4 +39,4 @@ If you like it, I'd be happy if you donated the game from Steam.
 
 - https://store.steampowered.com/wishlist/id/ohtorii
 
-It will encourage development😊
+It will encourage development・
