@@ -39,4 +39,4 @@ If you like it, I'd be happy if you donated the game from Steam.
 
 - https://store.steampowered.com/wishlist/id/ohtorii
 
-It will encourage development・
+It will encourage development😊
