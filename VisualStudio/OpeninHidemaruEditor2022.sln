@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpeninHidemaruEditor", "OpeninHidemaruEditor\OpeninHidemaruEditor.csproj", "{200F0197-570F-4A89-A813-F8E5653190E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpeninHidemaruEditor2022", "OpeninHidemaruEditor2022\OpeninHidemaruEditor2022.csproj", "{200F0197-570F-4A89-A813-F8E5653190E2}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedProject", "SharedProject\SharedProject\SharedProject.shproj", "{1C6FADFB-EEC7-44CB-A318-1F72AE0B382D}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		SharedProject\SharedProject\SharedProject.projitems*{1c6fadfb-eec7-44cb-a318-1f72ae0b382d}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -26,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {70E30573-009A-4EF3-9B28-6E7AFE6A360F}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SharedProject\SharedProject\SharedProject.projitems*{1c6fadfb-eec7-44cb-a318-1f72ae0b382d}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

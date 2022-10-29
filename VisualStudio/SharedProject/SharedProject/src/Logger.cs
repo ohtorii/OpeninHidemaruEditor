@@ -31,7 +31,7 @@ namespace OpeninHidemaruEditor.Helpers
 				}
                 ThreadHelper.ThrowIfNotOnUIThread();
 
-				_pane.OutputString(DateTime.Now + ": " + message + Environment.NewLine);
+				_pane.OutputStringThreadSafe(DateTime.Now + ": " + message + Environment.NewLine);
 			}
 			catch (Exception ex)
 			{
